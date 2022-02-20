@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite name="LoginTest" preserve-order="true">
+	
+	<parameter name="myBrowser" value="chrome" />
+	<parameter name="environment"
+		value="https://www.trendyol.com/" />
+	<parameter name="email" value="titove8545@settags.com"></parameter>
+	<parameter name="password" value="titove8545"></parameter>
+
+
+
+
+	<test name="scenario-1">
+		<classes>
+			<class name="suites.TrendyolSuite">
+				<methods>
+					<include name="login" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="scenario-2.1">
+			<parameter name="searchText" value="oyuncu bilgisayarı"></parameter>
+			<parameter name="lowPrice" value="3000"></parameter>
+			<parameter name="highPrice" value="100000"></parameter>
+		<classes>
+			<class name="suites.TrendyolSuite">
+				<methods>
+					<include name="addMonsterProduct" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="scenario-2.2">
+		<parameter name="searchText" value="gömlek"></parameter>
+		<classes>
+			<class name="suites.TrendyolSuite">
+				<methods>
+					<include name="addShirtProduct" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="scenario-3">
+		<classes>
+			<class name="suites.TrendyolSuite">
+				<methods>
+					<include name="checkComponent" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
